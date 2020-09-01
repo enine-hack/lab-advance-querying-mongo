@@ -5,16 +5,16 @@
 ### 1. All the companies whose name match 'Babelgum'. Retrieve only their `name` field.
 
 query: {name: "Babelgum"}
-projection: {name: 1}
+projection: {name: 1, _id: 0}
 sort:
 skip:
 limit:
 
 ### 2. All the companies that have more than 5000 employees. Limit the search to 20 companies and sort them by **number of employees**.
 
-query: { employees: { $gt: 5000} }
+query: { number_of_employees: { $gt: 5000} }
 projection:
-sort: {employees: 1}
+sort: {number_of_employees: 1}
 skip:
 limit: 20
 
